@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 const Data = require("./Data.json");
-app.use(cors());
+// app.use(cors());
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Store and retrieve your videos from here
