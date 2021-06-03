@@ -19,6 +19,7 @@ const AllVideoFiles = () => {
           .then(response => response.json())
           .then(data => {
             allVideos.current = data;
+            console.log(data)
             setSearchedVideos(data);
         }).catch(error => alert("Refresh The page, something went wrong"));
         }, [])
