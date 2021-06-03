@@ -21,7 +21,9 @@ const AllVideoFiles = () => {
             allVideos.current = data;
             console.log(data)
             setSearchedVideos(data);
-        }).catch(error => alert("Refresh The page, something went wrong"));
+        }).catch(error => {
+            console.log(error)
+            alert(error)});
         }, [])
 
     const handleDelete = (event) => {        
