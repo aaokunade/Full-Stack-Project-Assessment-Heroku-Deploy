@@ -49,30 +49,30 @@ app.post("/", (req, res) => {
     
   });
 
-  app.get("/:ID", (req, res) => {
-    const videoID = req.params.ID;
-    const oneVideo = Data.find((obj) => {
-      return obj["id"] === parseInt(videoID)
-    })
-    res.json(oneVideo)
-    });
+app.get("/:ID", (req, res) => {
+  const videoID = req.params.ID;
+  const oneVideo = Data.find((obj) => {
+    return obj["id"] === parseInt(videoID)
+  })
+  res.json(oneVideo)
+  });
 
-    app.delete("/:ID", (req, res) => {
-      const videoToDelete = req.params.ID;
-      const videoIndex = Data.findIndex((obj) => {
-        return(obj["id"] === parseInt(videoToDelete))
-      })      
-      if(videoIndex === -1){
-        res.status(400).send("Error");
-      }else{
-        Data.splice(videoIndex, 1)
-        res.send("DELETED");
-      }
-    });
+app.delete("/:ID", (req, res) => {
+  const videoToDelete = req.params.ID;
+  const videoIndex = Data.findIndex((obj) => {
+    return(obj["id"] === parseInt(videoToDelete))
+  })      
+  if(videoIndex === -1){
+    res.status(400).send("Error");
+  }else{
+    Data.splice(videoIndex, 1)
+    res.send("DELETED");
+  }
+});
 
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname + '/client/build/index.html'))
-    })  
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+})  
 
-  app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
