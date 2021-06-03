@@ -4,7 +4,9 @@ import "../App.css";
 import AddVideo from './addVideo';
 import Search from './search.js';
 import VideoFrames from './videoFrames.js';
-
+const localURL = 'http://127.0.0.1:5000';
+const prodURL = 'https://video-recommendations.herokuapp.com/';
+const curURL = prodURL;
 
 
 const AllVideoFiles = () => {
@@ -13,7 +15,7 @@ const AllVideoFiles = () => {
     const [searchedVideos, setSearchedVideos] = useState([]);
     
     useEffect(() => {
-        fetch("http://127.0.0.1:5000")
+        fetch(curURL)
           .then(response => response.json())
           .then(data => {
             allVideos.current = data;
