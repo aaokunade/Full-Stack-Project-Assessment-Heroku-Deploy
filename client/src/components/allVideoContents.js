@@ -5,7 +5,7 @@ import AddVideo from './addVideo';
 import Search from './search.js';
 import VideoFrames from './videoFrames.js';
 const localURL = 'http://127.0.0.1:5000';
-const prodURL = '/';
+const prodURL = '/allVideos';
 const curURL = prodURL;
 
 

@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 let videos = [];
 
 // GET "/"
-app.get("/", (req, res) => {
+app.get("/allVideos", (req, res) => {
   // const searchedValue = req.query
 res.json(Data);
 });
